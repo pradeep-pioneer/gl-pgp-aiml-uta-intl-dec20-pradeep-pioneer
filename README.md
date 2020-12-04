@@ -53,14 +53,16 @@ After installing the above pre-requistes it's the time for us to setup our conda
 To create the environment I will execute the following commands from a terminal/command prompt (on windows - you can run the cmd process).
 
 ```bash
+# install jupyter notebooks
+conda install -y jupyter
 # navigate to the root of the repository
 cd [REPO_ROOT]
 conda env create -v -f <gl-tensorflow.yml | gl-tensorflow-gpu.yml>
 conda activate <gl-tensorflow | gl-tensorflow-gpu>
 # for CPU tensorflow
-python -m ipykernel install --user --name tensorflow --display-name "GL-Python-3.7 (tensorflow)"
+python -m ipykernel install --user --name gl-tensorflow --display-name "GL-Python-3.7 (tensorflow)"
 # for GPU tensorflow
-python -m ipykernel install --user --name tensorflow --display-name "GL-Python-3.7 (tensorflow-gpu)"
+python -m ipykernel install --user --name gl-tensorflow-gpu --display-name "GL-Python-3.7 (tensorflow-gpu)"
 ```
 
 ### Step 2
