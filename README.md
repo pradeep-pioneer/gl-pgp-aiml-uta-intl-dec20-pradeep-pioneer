@@ -59,9 +59,9 @@ conda install -y jupyter
 cd [REPO_ROOT]
 conda env create -v -f <gl-tensorflow.yml | gl-tensorflow-gpu.yml>
 conda activate <gl-tensorflow | gl-tensorflow-gpu>
-# for CPU tensorflow
+# for CPU tensorflow env
 python -m ipykernel install --user --name gl-tensorflow --display-name "GL-Python-3.7 (tensorflow)"
-# for GPU tensorflow
+# for GPU tensorflow env
 python -m ipykernel install --user --name gl-tensorflow-gpu --display-name "GL-Python-3.7 (tensorflow-gpu)"
 ```
 

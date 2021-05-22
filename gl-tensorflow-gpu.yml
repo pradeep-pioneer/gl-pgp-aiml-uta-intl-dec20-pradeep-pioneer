@@ -1,5 +1,4 @@
 name: gl-tensorflow-gpu
- 
 dependencies:
     - python=3.7
     - pip>=20.0
@@ -17,6 +16,7 @@ dependencies:
     - pyyaml
     - flask
     - boto3
+    - seaborn
     - pip:
         - bayesian-optimization
         - gym
