@@ -16,6 +16,9 @@ dependencies:
     - pyyaml
     - flask
     - boto3
+    - xgboost
+    - openpyxl
+    - scikit-learn-intelex
     - seaborn
     - pip:
         - bayesian-optimization
