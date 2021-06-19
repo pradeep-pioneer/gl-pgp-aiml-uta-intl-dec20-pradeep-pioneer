@@ -20,6 +20,8 @@ dependencies:
     - openpyxl
     - scikit-learn-intelex
     - seaborn
+    - statsmodels
+    - imbalanced-learn
     - pip:
         - bayesian-optimization
         - gym
