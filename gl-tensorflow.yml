@@ -22,6 +22,11 @@ dependencies:
     - seaborn
     - statsmodels
     - imbalanced-learn
+    - nltk
+    - contractions
+    - bs4
+    - vaderSentiment
+    - textblob
     - pip:
         - bayesian-optimization
         - gym
