@@ -21,14 +21,18 @@ dependencies:
     - scikit-learn-intelex
     - seaborn
     - statsmodels
-    - imbalanced-learn
     - nltk
-    - contractions
     - bs4
-    - vaderSentiment
-    - textblob
+    - tqdm
     - pip:
         - bayesian-optimization
         - gym
         - kaggle
-        
+        - vaderSentiment
+        - imbalanced-learn
+        - textblob
+        - tensorflow_text
+        - gdown
+        - contractions
+        - wordcloud
+        - scikit-learn-intelex

@@ -63,12 +63,58 @@ conda activate <gl-tensorflow | gl-tensorflow-gpu>
 python -m ipykernel install --user --name gl-tensorflow --display-name "GL-Python-3.7 (tensorflow)"
 # for GPU tensorflow env
 python -m ipykernel install --user --name gl-tensorflow-gpu --display-name "GL-Python-3.7 (tensorflow-gpu)"
+conda deactivate
 ```
 
-### Step 2
+### Step 2.5 => For Tensorflow GPU support (optional only if you are using the gl-tensorflow-gpu).
+
+Let's see if we have cudnn and cudatoolkit installed
+
+```bash
+conda activate gl-tensorflow-gpu
+conda list
+```
+This command lists the packages installed in the current conda environment. **If you don’ t see ‘cudnn’ or ‘cudatoolkit’ package installed, then you need to install them.**
+
+#### Find cudnn:
+
+```bash
+conda search cudnn
+```
+
+The output will be something like the one shown below (depending on the latest versions available)
+| Name                       |Version           |Build       |Channel  |
+|----------------------------|------------------|------------|---------|
+|cudnn                       |7.1.4             |cuda8.0_0   |pkgs/main|
+|cudnn                       |7.1.4             |cuda9.0_0   |pkgs/main|
+|cudnn                       |7.3.1             |cuda10.0_0  |pkgs/main|
+|cudnn                       |7.6.0             |cuda10.0_0  |pkgs/main|
+|cudnn                       |7.6.0             |cuda10.1_0  |pkgs/main|
+|cudnn                       |7.6.0             | cuda9.0_0  |pkgs/main|
+|cudnn                       |7.6.4             |cuda10.0_0  |pkgs/main|
+|cudnn                       |7.6.4             |cuda10.1_0  |pkgs/main|
+|cudnn                       |7.6.4             | cuda9.0_0  |pkgs/main|
+|cudnn                       |7.6.5             |cuda10.0_0  |pkgs/main|
+|cudnn                       |7.6.5             |cuda10.1_0  |pkgs/main|
+|cudnn                       |7.6.5             |cuda10.2_0  |pkgs/main|
+|cudnn                       |7.6.5             | cuda9.0_0  |pkgs/main|
+|cudnn                       |7.6.5             | cuda9.2_0  |pkgs/main|
+|cudnn                       |8.2.1             |cuda11.3_0  |pkgs/main|
+
+Run the following command or similar based on the output that you see.
+```bash
+conda install cudnn=8.2.1=cuda11.3_0
+conda install tensorflow-gpu
+conda list
+```
+Now you should be able to see the cudnn, cudatoolkit installed in your environment. Deactivate the environment.
+```bash
+conda deactivate
+```
 
 Now it's time to check our environments. We can execute the following commnads from the root of our repository
 
+### Step 2
 ```bash
 conda activate <gl-tensorflow | gl-tensorflow-gpu>
 jupyter notebook
@@ -76,6 +122,6 @@ jupyter notebook
 
 This will start the jupyter notebooks and open the default web browser with the user interface for jupyter notebooks.
 
-To check the environment you can open the notebook in the [01-environment-check.ipynb](./01-program-overview/practice/01-environment-check.ipynb)
+To check the environment you can open the notebook in the [01-environment-check.ipynb](./00-check-environment.ipynb)
 
 If there are no errors when executing the first code cell (second cell in the notebook) - the environment has been setup successfully.
